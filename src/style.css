@@ -11,8 +11,18 @@
     border-radius: 10px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
     font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    align-content: center;
+}
+
+.searchdiv,
+.locationdiv,
+.weathericondiv,
+.weatherdiv {
+    justify-self: center;
+    align-self: center;
 }
 
 .searchdiv {
@@ -23,8 +33,11 @@
     grid-row: 2 / 3;
 }
 
-#weathericon {
+.weathericondiv {
     grid-row: 3 / 4;
+    background-color: rgb(250, 92, 237);
+    border-radius: 10px;
+    box-shadow: 5px 5px 3px grey;
 }
 
 .weatherdiv {
