@@ -1,0 +1,41 @@
+*, 
+*:before, 
+*:after {
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: rgb(195, 172, 216);
+    width: 50vw;
+    height: auto;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.searchdiv {
+    grid-row: 1 / 2;
+}
+
+.locationdiv {
+    grid-row: 2 / 3;
+}
+
+#weathericon {
+    grid-row: 3 / 4;
+}
+
+.weatherdiv {
+    grid-row: 4 / 5;
+}
+
+input[type=text] {
+    background-color: lightblue;
+    margin: 1em;
+    border-radius: 5px;
+    /*box-shadow: 5px 5px 5px rgb(153, 99, 204);*/
+    border-style: none;
+}
+
