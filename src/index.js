@@ -42,15 +42,28 @@ function populateWeather(weather) {
     const tempInF = Math.round((((9/5) * tempInC) + 32) * 10) /10;
     
     const tempSpan = document.getElementById('temp');
-    tempSpan.textContent = tempInF + "F" // (" + tempInC + "C)";
+    const fToCCheck = document.getElementById('ftoc');
+    tempSpan.textContent = tempInF + "°F"
+
+    addCheckboxListener(fToCCheck, tempSpan, tempInC, tempInF)
 
     //WEATHER DESCRIPTION/ICON
     const weatherSpan = document.getElementById('weather');
     const weatherIcon = document.getElementById('weathericon');
     const weatherIconImg = 'http://openweathermap.org/img/wn/' + weather.weather[0].icon + '@2x.png';
     weatherIcon.src = weatherIconImg;
-    weatherSpan.textContent = weather.weather[0].description;
+    weatherSpan.textContent = weather.weather[0].description + ', ';
 
+}
+
+function addCheckboxListener(fToCCheck, tempSpan, c, f) {
+    fToCCheck.addEventListener('change', () => {
+      if (fToCCheck.checked) {
+        tempSpan.textContent = c + '° C';
+      } else {
+        tempSpan.textContent = f + '° F';
+      }
+    });
 }
 
 const searchButton = document.getElementById('search');
